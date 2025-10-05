@@ -14,4 +14,6 @@ def create_app():
   db.init_app(app)
   migrate.init_app(app, db)
 
+  from app.models import User, Post, Like  # Import models to register them with SQLAlchemy
+  
   return app
