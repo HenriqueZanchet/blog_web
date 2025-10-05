@@ -1,2 +1,4 @@
 from .user import User
-# depois adicionar Post, Like
+from .post import Post
+
+__all__ = ['User', 'Post']
