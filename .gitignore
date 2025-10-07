@@ -1,2 +1,6 @@
 .venv/
 __pycache__/
+migrations/
+*.db
+instance/
+*.sqlite3
