@@ -15,3 +15,5 @@ class Post(db.Model):
     autor: Mapped["User"] = relationship("User", back_populates="posts")
     likes: Mapped[list["Like"]] = relationship("Like", back_populates="post", cascade="all, delete-orphan")
     
+    def __repr__(self) -> str:
+        return f"<Post(id={self.id}, titulo={self.titulo}, user_id={self.user_id})>"

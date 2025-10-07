@@ -10,3 +10,6 @@ class Like(db.Model):
 
     user: Mapped["User"] = relationship("User", back_populates="likes")
     post: Mapped["Post"] = relationship("Post", back_populates="likes")
+    
+    def __repr__(self) -> str:
+        return f"<Like(user_id={self.user_id}, post_id={self.post_id})>"

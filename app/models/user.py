@@ -20,10 +20,10 @@ class User(db.Model):
     
     def __repr__(self):
         return f"User(id={self.id} nome={self.nome} email={self.email})"
-      
+
     # Relacionamento com Post --- IGNORE ---
     posts: Mapped[list["Post"]] = relationship("Post", back_populates="autor", cascade="all, delete-orphan")
     likes: Mapped[list["Like"]] = relationship("Like", back_populates="user", cascade="all, delete-orphan")
     
     def __repr__(self):
-        return f"User(id={self.id} nome={self.nome} email={self.email})"
+        return f"<User(id={self.id} nome={self.nome} email={self.email})>"
